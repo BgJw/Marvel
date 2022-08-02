@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    width: 100%;
+    margin-bottom: 40px;
+    
+    filter: drop-shadow(0 5px 3px black);
+   a {
+        margin-top: 20px;
+    }
+    .header__menu {
+        display: flex;
+        
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        white-space: pre;
+    }
+    .red{
+        color: red;
+    }
+    .notActive{
+        animation: pulse 1.5s ease-in-out .5s infinite 
+    }
+    .active {
+        color: red;
+        animation: none;
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+
+    .header{
+        display: block;
+        text-align: center;
+        .header__menu{
+            font-size: 20px;
+            justify-content: center;
+        }
+        h1{
+            font-size: 30px;
+
+        }
+    }
+}

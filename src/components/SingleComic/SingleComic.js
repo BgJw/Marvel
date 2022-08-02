@@ -1,0 +1,31 @@
+import './SingleComic.scss';
+
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+
+const SingleComic = () => {
+    const { singleComic } = useSelector(state => state.ComicsListSlice);
+
+    return (
+        singleComic? <View comic={singleComic} />: null
+    )
+};
+
+const View = ({comic}) => {
+    return (
+        <div className="single-comic">
+            <img src={comic.thumbnail} alt={comic.name} className="single-comic__img" />
+            <div className="single-comic__info">
+                <h2 className="single-comic__name">{comic.name}</h2>
+                <p className="single-comic__descr">{comic.description}</p>
+                <p className="single-comic__descr">{comic.pageCount}</p>
+                <p className="single-comic__descr">Language: {comic.language}</p>
+                <div className="single-comic__price">{comic.price}</div>
+            </div>
+            <NavLink to="/comics" className="single-comic__back">Back to all</NavLink>
+        </div>
+    )
+}
+
+export default SingleComic;

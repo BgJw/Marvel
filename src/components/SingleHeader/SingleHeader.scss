@@ -1,0 +1,50 @@
+@import '../../Style/variables.scss';
+
+.app {
+    &__banner {
+        width: 100%;
+        background-color: $dark;
+        height: 100px;
+        padding: 0 25px 0 45px;
+        display: grid;
+        grid-template-columns: 152px auto 133px;
+
+        &-text {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            text-align: center;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .app{
+        &__banner{
+            padding: 0;
+            img{
+                margin: 0 auto;
+            }
+            &-text{
+                font-size: 12px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .app{
+        &__banner{
+            grid-template-columns: 1fr 1fr;
+
+            img:first-child{
+                display: none;
+            }
+        }
+    }
+}

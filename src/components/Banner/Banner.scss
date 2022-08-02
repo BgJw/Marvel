@@ -1,0 +1,147 @@
+
+.banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    
+    
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        height: 250px;
+
+        background: #FFFFFF;
+        padding: 20px;
+
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            img {
+                max-width: 190px;
+                height: 190px;
+                object-fit: contain;
+                image-rendering: pixelated;
+
+            }
+        }
+        .description {
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+            text-align: center;
+            
+
+            .information {
+                font-size: 16px;
+                color: #000000;
+            }
+            .buttons {
+                display: flex;
+                justify-content:space-evenly;
+                align-items: center;
+            }
+        }
+
+
+    }
+    &__random {
+        position: relative;
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        height: 250px;
+        padding: 20px;
+        color: white;
+        background: #232222;
+
+        img {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+        }
+        .button {
+            max-width: 150px;
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .banner {
+        &__info {
+            grid-template-columns: repeat(2, auto);
+            text-align: center;
+            .img {
+                img {
+                    max-width: 140px;
+                    height: 140px;
+                }
+            }
+        }
+        &__random {
+            width: 100%;
+
+            h2, h3 {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        display: block;
+        
+        &__info {
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: 1fr;
+            .img {
+                img {
+                    max-width: 190px;
+                    height: 190px;
+                }
+            }
+        }
+        &__random {
+            h2, h3 {
+                font-size: 25px;
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .banner {
+        &__info {
+            display: block;
+            height: auto;
+            padding-top: 5px;
+            .description{
+                h1{
+                    font-size: 20px;
+                }
+            }
+            .img {
+                img {
+                    max-width: 130px;
+                    height: 130px;
+                }
+            }
+        }
+        &__random {
+
+            h2, h3 {
+                font-size: 18px;
+            }
+            img{
+                width: 160px;
+            }
+        }
+
+    }
+}
