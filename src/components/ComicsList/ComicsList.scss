@@ -49,3 +49,11 @@
         }
     }
 }
+@media screen and (max-width: 425px) {
+    .comics {
+        &__grid{
+            grid-template-columns: repeat(2, 100px);
+
+    }
+}
+}

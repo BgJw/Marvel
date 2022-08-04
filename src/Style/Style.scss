@@ -73,11 +73,12 @@ input::-webkit-inner-spin-button {
 }
 .full{
     width: 100%;
+    min-height:800px;
 }
 .char_panel {
     position: sticky;
     height: 10%;
-    top: 20px;
+    top: 50px;
 }
 @media screen and (max-width: 1024px){
     .char__content {
@@ -88,10 +89,13 @@ input::-webkit-inner-spin-button {
     .wrapper {
         max-width: 95%;
     }
+        .char__content {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 425px) {
-    .char__content {
-        display: block;
+    .wrapper {
+        max-width: 100%;
     }
 }

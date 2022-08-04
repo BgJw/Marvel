@@ -77,32 +77,24 @@
 
 
 
-// @media screen and (max-width: 1024px){
-//     .charList{
-//         ul{
-//             grid-template-columns: repeat(auto-fill, 150px);
-//             li {
-//                 img {
-//                     height: 150px;
-//                 }
-//             }
-//         }
-//     }
-// }
 
-// @media screen and (max-width: 425px) {
-//     .charList {
-//         ul{
-//             grid-template-columns: repeat(2, minmax(100px, 200px));
 
-//             li{
-               
-//                 div{
-//                     font-size: 14px;
-//                     height: 80px;
-//                 }
-//             }
-//         }
-//     }
-// }
+@media screen and (max-width: 425px) {
+    .charList {
+        button {
+         margin-bottom: 20px;   
+        }
+        ul{
+            grid-template-columns: repeat(2, 120px);
+
+            li{
+                height: 200px;
+
+                img {
+                    height: 120px;
+                }
+            }
+        }
+    }
+}
 
