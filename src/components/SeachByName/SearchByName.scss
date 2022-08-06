@@ -11,6 +11,7 @@
             background-color: #fff;
             height: auto;
             max-height: 180px;
+            width: 350px;
             border-radius: 5px;
 
         }
@@ -57,4 +58,44 @@
             color: #03710E;
         }
     }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .char {
+        &__search {
+            &-form {
+                width: 300px;
+            }}
+}
+}
+
+@media screen and (max-width: 425px) {
+    .char {
+        &__search {
+            &-form {
+                width: auto;
+            }
+        }
+}
+}
+
+@media screen and (max-width: 375px) {
+    .char {
+        &__search {
+            &-form {
+                width: 375px;
+            }
+        }
+}
+}
+
+@media screen and (max-width: 320px) {
+    .char {
+        &__search {
+            &-form {
+                width: 320px;
+            }
+        }
+}
 }

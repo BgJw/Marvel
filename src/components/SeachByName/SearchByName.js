@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const SearchByName = () => {
     
     const { getCharacterName } = MarvelService();
-    const { singleChar, mainPageBgColor } = useSelector(state => state.CharListSlice);
+    const { singleChar } = useSelector(state => state.CharListSlice);
     const dispatch = useDispatch();
 
     
@@ -27,9 +27,7 @@ const SearchByName = () => {
     
     return (
         
-        <div className="char__search-form"
-             style={mainPageBgColor && {'backgroundColor': mainPageBgColor}}
-            >
+        <div className="char__search-form">
             <Formik
                 initialValues={
                     { charName: '' }

@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
         justify-content: space-around;
-        grid-gap: 20px;  
+        grid-gap: 30px;  
         li {
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
             border-top-right-radius: 10px;
@@ -76,7 +76,21 @@
 }
 
 
+@media screen and (max-width: 1025px) {
+    .charList {
+        ul{
+            display: grid;
+            grid-template-columns:repeat(auto-fill, 130px);
 
+            li{
+                width: 120px;
+                img {
+                    height: 120px;
+                }
+            }
+        }
+    }
+}
 
 
 @media screen and (max-width: 425px) {

@@ -5,11 +5,10 @@ import './CharInfo.scss';
 
 const CharInfo = () => {
 
-    const {charInfo, mainPageBgColor} = useSelector(state => state.CharListSlice);
+    const {charInfo} = useSelector(state => state.CharListSlice);
 
     return (
-        <div className='char__wrapper'
-             style={mainPageBgColor && { 'backgroundColor': mainPageBgColor }}>
+        <div className='char__wrapper'>
             {charInfo ? <View char={charInfo} /> : <Skeleton />}
         </div>
     );
