@@ -81,7 +81,7 @@
         ul{
             display: grid;
             grid-template-columns:repeat(auto-fill, 130px);
-
+            grid-gap: 10px;
             li{
                 width: 120px;
                 img {
@@ -112,3 +112,10 @@
     }
 }
 
+@media screen and (max-width: 320px){
+    .charList{
+        ul {
+            grid-gap: 30px;
+        }
+    }
+}

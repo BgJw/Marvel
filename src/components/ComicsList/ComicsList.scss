@@ -49,11 +49,30 @@
         }
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 555px) {
     .comics {
         &__grid{
-            grid-template-columns: repeat(2, 100px);
-
+            grid-template-columns: repeat(auto-fill, 150px);
+        }
+        &__item{
+            &-img{
+                width: 150px;
+                height: 150px;
+            }
+        }
     }
 }
+
+@media screen and (max-width: 555px) {
+    .comics {
+        &__grid{
+            grid-template-columns: repeat(auto-fill, 120px);
+        }
+        &__item{
+            &-img{
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
 }

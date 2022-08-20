@@ -9,12 +9,10 @@
             position: relative;
             z-index: 5;
             background-color: #fff;
-            height: auto;
-            max-height: 180px;
-            width: 350px;
             border-radius: 5px;
 
         }
+
         &-label {
             display: block;
             font-weight: bold;
@@ -22,14 +20,15 @@
             line-height: 24px;
             color: #000;
         }
+
         &-wrapper {
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             input {
                 padding: 0 10px;
-                width: 250px;
                 height: 38px;
                 border: none;
                 border-radius: 5px;
@@ -40,6 +39,7 @@
             }
 
         }
+
         &-error {
             font-weight: bold;
             font-size: 16px;
@@ -47,9 +47,11 @@
             color: $main-color;
 
         }
+
         &-critical-error {
             margin-top: 10px;
         }
+
         &-success {
             margin-top: -10px;
             font-weight: bold;
@@ -64,37 +66,27 @@
 @media screen and (max-width: 1024px) {
     .char {
         &__search {
-            &-form {
-                width: 300px;
-            }}
-}
-}
-
-@media screen and (max-width: 425px) {
-    .char {
-        &__search {
-            &-form {
-                width: auto;
+            &-wrapper {
+                display: block;
+                text-align: center;
+                
+                input {
+                    margin-bottom: 5px;
+                }
             }
         }
-}
+    }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 555px) {
     .char {
         &__search {
-            &-form {
-                width: 375px;
+            &-form{
+                text-align: center;
             }
-        }
-}
-}
-
-@media screen and (max-width: 320px) {
-    .char {
-        &__search {
-            &-form {
-                width: 320px;
+            &-wrapper {
+                display: flex;
+                justify-content:space-around;
             }
         }
 }

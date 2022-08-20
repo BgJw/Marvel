@@ -20,31 +20,22 @@
     }
 }
 
-@media screen and (max-width: 425px) {
-
+@media screen and (max-width: 555px) {
     .app{
         &__banner{
-            padding: 0;
+            grid-template-columns: 1fr 1fr;
+
             img{
                 margin: 0 auto;
+                &:first-child{
+                    display: none;
+                }
             }
             &-text{
-                font-size: 12px;
+                font-size: 15px;
                 line-height: 24px;
             }
         }
     }
 }
 
-@media screen and (max-width: 375px) {
-
-    .app{
-        &__banner{
-            grid-template-columns: 1fr 1fr;
-
-            img:first-child{
-                display: none;
-            }
-        }
-    }
-}

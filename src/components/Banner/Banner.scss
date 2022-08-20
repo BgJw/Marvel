@@ -71,48 +71,14 @@
 
 @media screen and (max-width: 1024px) {
     .banner {
+        display: block;
         &__info {
             grid-template-columns: repeat(2, auto);
             text-align: center;
-            .img {
-                img {
-                    max-width: 140px;
-                    height: 140px;
-                }
-            }
-        }
-        &__random {
-            width: 100%;
-
-            h2, h3 {
-                font-size: 20px;
-            }
         }
     }
 }
 
-@media screen and (max-width: 768px) {
-    .banner {
-        display: block;
-        
-        &__info {
-            grid-template-columns: repeat(2, 50%);
-            grid-template-rows: 1fr;
-            .img {
-                img {
-                    max-width: 190px;
-                    height: 190px;
-                }
-            }
-        }
-        &__random {
-            h2, h3 {
-                font-size: 25px;
-            }
-        }
-
-    }
-}
 
 
 @media screen and (max-width: 425px) {
@@ -139,9 +105,20 @@
                 font-size: 18px;
             }
             img{
-                width: 160px;
+                width: 155px;
             }
         }
 
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .banner{
+        &__random{
+            img{
+                width: 130px;
+            }
+        }
     }
 }

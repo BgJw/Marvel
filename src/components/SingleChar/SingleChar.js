@@ -15,14 +15,14 @@ const SingleComic = () => {
 
 const View = ({char}) => {
     return (
-        <div className="single-comic">
-            <img src={char.thumbnail} alt={char.name} className="single-comic__img" />
-            <div className="single-comic__info">
-                <h2 className="single-comic__name">{char.name}</h2>
-                <p className="single-comic__descr">{char.description}</p>
-                <p className="single-comic__descr">{char.pageCount}</p>
+        <div className="single-char">
+            <img src={char.thumbnail} alt={char.name} className="single-char__img" />
+            <div className="single-char__info">
+                <h2 className="single-char__name">{char.name}</h2>
+                <p className="single-char__descr">{char.description}</p>
+                <p className="single-char__descr">{char.pageCount}</p>
             </div>
-            <NavLink to="/" className="single-comic__back">Back to all</NavLink>
+            <NavLink to="/" className="single-char__back">Back to all</NavLink>
         </div>
     )
 }
