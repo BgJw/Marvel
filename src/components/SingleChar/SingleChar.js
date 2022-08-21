@@ -6,11 +6,15 @@ import { useEffect } from 'react';
 import { getSingleCharByName } from '../../slices/CharListSlice';
 
 import MarvelService from '../../services/MarvelService';
+
 const SingleComic = () => {
+
     const { singleChar } = useSelector(state => state.CharListSlice);
     const {charId} = useParams();
     const dispatch = useDispatch();
     const {getCharacter} = MarvelService();
+
+
     useEffect(()=>{
         getCharacter(charId)
             .then(data => dispatch(getSingleCharByName(data)));

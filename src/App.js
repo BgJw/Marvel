@@ -30,8 +30,7 @@ function App() {
 
     return (
         <div className='full'
-            style={bgColor && { 'backgroundColor': bgColor }}
-        >
+            style={bgColor && { 'backgroundColor': bgColor }}>
             <div className="wrapper">
                 <BrowserRouter>
                     <Suspense fallback={ <Spinner /> }>

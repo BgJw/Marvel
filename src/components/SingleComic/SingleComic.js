@@ -8,14 +8,17 @@ import { getSingleComic } from '../../slices/ComicsListSlice';
 
 
 const SingleComic = () => {
+    
     const { singleComic } = useSelector(state => state.ComicsListSlice);
     const {comicId} = useParams();
     const dispatch = useDispatch();
     const {getSingleComics} = MarvelService();
+    
     useEffect(()=>{
         getSingleComics(comicId)
             .then(data => dispatch(getSingleComic(data)));
     },[])
+    
     return (
         singleComic? <View comic={singleComic} />: null
     )
