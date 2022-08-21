@@ -1,12 +1,20 @@
 import './SingleChar.scss';
 
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useParams  } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getSingleCharByName } from '../../slices/CharListSlice';
 
-
+import MarvelService from '../../services/MarvelService';
 const SingleComic = () => {
     const { singleChar } = useSelector(state => state.CharListSlice);
-
+    const {charId} = useParams();
+    const dispatch = useDispatch();
+    const {getCharacter} = MarvelService();
+    useEffect(()=>{
+        getCharacter(charId)
+            .then(data => dispatch(getSingleCharByName(data)));
+    },[])
     
     return (
         singleChar && <View char={singleChar} />
@@ -22,7 +30,7 @@ const View = ({char}) => {
                 <p className="single-char__descr">{char.description}</p>
                 <p className="single-char__descr">{char.pageCount}</p>
             </div>
-            <NavLink to="/comics" className="single-char__back">Back to all</NavLink>
+            <NavLink to="/" className="single-char__back">Back to all</NavLink>
         </div>
     )
 }

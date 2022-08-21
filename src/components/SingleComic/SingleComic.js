@@ -1,12 +1,21 @@
 import './SingleComic.scss';
 
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import MarvelService from '../../services/MarvelService';
+import { useEffect } from 'react';
+import { getSingleComic } from '../../slices/ComicsListSlice';
 
 
 const SingleComic = () => {
     const { singleComic } = useSelector(state => state.ComicsListSlice);
-
+    const {comicId} = useParams();
+    const dispatch = useDispatch();
+    const {getSingleComics} = MarvelService();
+    useEffect(()=>{
+        getSingleComics(comicId)
+            .then(data => dispatch(getSingleComic(data)));
+    },[])
     return (
         singleComic? <View comic={singleComic} />: null
     )
