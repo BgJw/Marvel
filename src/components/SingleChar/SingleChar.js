@@ -22,7 +22,7 @@ const View = ({char}) => {
                 <p className="single-char__descr">{char.description}</p>
                 <p className="single-char__descr">{char.pageCount}</p>
             </div>
-            <NavLink to="/" className="single-char__back">Back to all</NavLink>
+            <NavLink to="/comics" className="single-char__back">Back to all</NavLink>
         </div>
     )
 }

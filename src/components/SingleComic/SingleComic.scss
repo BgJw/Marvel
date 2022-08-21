@@ -45,7 +45,11 @@
 
     .single-comic{
         display: block;
-        text-align: center;    
+        text-align: center;   
+        
+        &__back{
+            padding: 15px;
+        }
     }
 }
 

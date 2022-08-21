@@ -10,7 +10,7 @@ const initialState = {
 export const fetchSingleChar = createAsyncThunk(
     'singleChar/fetchSingleChar',
     () => {
-        const random = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+        const random = Math.floor( Math.random() * (1011400 - 1011000) + 1011000);
         
        return MarvelService().getCharacter(random);
     });
