@@ -45,7 +45,7 @@ const View = ( {props} ) => {
                         dispatch(getBgColor(char.thumbnail))}
                         }>  
                 <button>
-                    <img src={char.thumbnail} alt={char.name} />
+                    <img src={char.thumbnail} alt={char.name} loading='lazy'/>
                     <div>{char.name}</div>
                 </button>
             </li>
