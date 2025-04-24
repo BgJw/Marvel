@@ -1,38 +1,50 @@
+import { MD5 } from "crypto-js";
 import { useHttp } from "../hooks/http.hook";
+
+
 
 const MarvelService = () => {
     const { request } = useHttp();
 
     const BASE_API = 'https://gateway.marvel.com:443/v1/public/';
-    const API_KEY = 'apikey=53ea69cb2b87f8facb70e9d7cf3a9273';
+    const PUBLIC_KEY = '53ea69cb2b87f8facb70e9d7cf3a9273';
+    const PRIVATE_KEY = '2bf5e455f7e3df9c939d7d284daed9e12b4bc9cb';
     const _limit = 8;
 
+
+    const getAuthParams = () => {
+        const ts = Date.now().toString(); 
+        const hash = MD5(ts + PRIVATE_KEY + PUBLIC_KEY).toString();
+        return `apikey=${PUBLIC_KEY}&ts=${ts}&hash=${hash}`;
+    };
+    
     const secureUrl = (url) => {
         return url ? url.replace(/^http:/, 'https:') : url;
     };
 
+    
     const getAllCharacters = async (offset, limit = _limit) => {
-        const res = await request(`${BASE_API}characters?limit=${limit}&offset=${offset}&${API_KEY}`);
+        const res = await request(`${BASE_API}characters?limit=${limit}&offset=${offset}&${getAuthParams()}`);
         return res.data.results.map(_transformCharacter);
     };
 
     const getCharacter = async (id) => {
-        const res = await request(`${BASE_API}characters/${id}?${API_KEY}`);
+        const res = await request(`${BASE_API}characters/${id}?${getAuthParams()}`);
         return _transformCharacter(res.data.results[0]);
     };
 
     const getComics = async (offset, limit = _limit) => {
-        const res = await request(`${BASE_API}comics?limit=${limit}&offset=${offset}&${API_KEY}`);
+        const res = await request(`${BASE_API}comics?limit=${limit}&offset=${offset}&${getAuthParams()}`);
         return res.data.results.map(_transformComics);
     };
 
     const getSingleComics = async (id) => {
-        const res = await request(`${BASE_API}comics/${id}?${API_KEY}`);
+        const res = await request(`${BASE_API}comics/${id}?${getAuthParams()}`);
         return _transformComics(res.data.results[0]);
     };
 
     const getCharacterName = async (name) => {
-        const res = await request(`${BASE_API}/characters?name=${name}&${API_KEY}`);
+        const res = await request(`${BASE_API}/characters?name=${name}&${getAuthParams()}`);
         return _transformCharacter(res.data.results[0]);
     };
 
